@@ -77,9 +77,7 @@ public class CommentController {
 		
 		//从session中获取用户名
 		String username = (String) session.getAttribute("username");
-		
-		
-		
+
 		/*获取系统当前时间*/
 		Date date=new Date();
 		DateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -100,7 +98,7 @@ public class CommentController {
 
 			
 			if (vo.getNickname() != null) {
-				
+				System.out.println("skhfjw");
 				comment.setCustomername(vo.getNickname());
 			} else {
 				
@@ -118,11 +116,13 @@ public class CommentController {
 		
 		//根据食谱名字查询食谱基本信息
 		RecipebasicEntity recipebasicEntity = 	recipebasicService.findByName(foodName);
-		
+
+		System.out.println("skhfkiw");
 		System.out.println("三生三世  ---评论 食谱基本信息： " + recipebasicEntity);
 		//根据食谱名字查询食谱原料信息
 		List<RecipematerailEntity> recipematerailEntity =	recipematerailService.findMessgeByName(foodName);
-	
+
+		System.out.println("hsfjakjhgb");
 		//根据食谱名字查询食谱步骤信息
 		List<RecipestepEntity> recipestepEntity = recipestepService.findMessageByName(foodName);
 	
